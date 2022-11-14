@@ -6,11 +6,27 @@ namespace MVCProject.Web.Controllers
     {
         public IActionResult Index()
         {
+            ViewBag.name = "Asp.Net Core MVC";
+            ViewData["name"] = "MVC Project";
+            ViewData["names"] = new List<string> { "xyz", "zyx", "jyz" };
+
+            ViewBag.persons = new { Id = 1, Name = "Furkan", Surname = "Bircan" };
+
+            TempData["customer"] = "JEFF";
             return View();
         }
         public IActionResult Index2()
         {
-            return RedirectToAction("Index","Test");
+            var surname = TempData["customer"];
+            return View();
+        }
+        public IActionResult IndexParameter(int id)
+        {
+            return RedirectToAction("JsonParameter", "Test", new { Id = id });
+        }
+        public IActionResult JsonParameter(int id)
+        {
+            return Json(new { Id = id });
         }
         public IActionResult ContentResult()
         {
