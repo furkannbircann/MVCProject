@@ -6,3 +6,40 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+<div>Date of the day : @DateTime.Now.ToShortDateString()</div>
+
+@{
+    var longDateTime = DateTime.Now.ToLongDateString();
+    var message = "Hello World!";
+
+    @: Long Date of the day : @longDateTime
+    <br />
+    <text>Long Date of the day (text tag) : @longDateTime</text>
+    <div>Message : @message</div>
+
+}
+
+@if (true)
+{
+    <p>True</p>
+}
+else if (false)
+{
+    <p>False</p>
+}
+else
+{
+
+}
+
+@for (var i = 0; i < 10; i++)
+{
+    <p>@i</p>
+}
+
+@foreach (var item in Enumerable.Range(1, 10).ToList())
+{
+    <p>@item</p>
+}
+
