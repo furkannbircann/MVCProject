@@ -4,7 +4,25 @@
 }
 
 @section header{
-    <h1>This title writed with RenderSectionAsync</h1>
+    <partial name="_HeaderPartialView" />
+}
+@section Css{
+    <style>
+        body {
+            height: 100vh;
+            background-color: #000;
+            color: #fff;
+        }
+
+    </style>
+}
+@section Scripts{
+    <script type="text/javascript">
+        //alert("Welcome to Page");
+        $(document).ready(function () {
+            console.log("Welcome to page")
+        })
+    </script>
 }
 
 <h1>ExampleLayout</h1>
